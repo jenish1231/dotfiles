@@ -2,7 +2,9 @@ return require('packer').startup(function()
 	use 'wbthomason/packer.nvim'
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kyazdani42/nvim-tree.lua'
+
     use 'sainnhe/edge'
+    use 'LunarVim/onedarker.nvim'
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -43,4 +45,5 @@ return require('packer').startup(function()
     use 'dyng/ctrlsf.vim'
 
     use 'mg979/vim-visual-multi'
+    use 'voldikss/vim-floaterm'
 end)

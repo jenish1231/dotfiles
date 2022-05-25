@@ -7,8 +7,8 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 -- map H, J, K ,L to switch between panes
 map('n', '<C-H>', '<C-W><C-H>', opts)
-map('n', '<C-J>', '<C-W><C-J>', opts)
-map('n', '<C-K>', '<C-W><C-K>', opts)
+-- map('n', '<C-J>', '<C-W><C-J>', opts)
+-- map('n', '<C-K>', '<C-W><C-K>', opts)
 map('n', '<C-L>', '<C-W><C-L>', opts)
 
 -- map jj to Esc key
@@ -16,7 +16,7 @@ map('i', 'jj', '<Esc>', opts)
 
 map('n', '<c-q>', ':noh<CR>', opts)
 map('n', '<c-j>', ':m+<CR>', opts)
-map('n', '<c-k>', ':m--<CR>', opts)
+map('n', '<C-k>', ':m--<CR>', opts)
 
 -- copy to clipboard
 map('n', 'Y', '"+yg_', opts)
@@ -41,10 +41,3 @@ map('n', '<C-E>', ':NvimTreeToggle<CR>', opts)
 
 -- Ctrl SF
 map('n', '<C-F>', ':CtrlSF ', opts)
-
-
--- Disable keys
-map('n', '<Up>', '<Nop>', opts)
-map('n', '<Down>', '<Nop>', opts)
-map('n', '<Left>', '<Nop>', opts)
-map('n', '<Right>', '<Nop>', opts)

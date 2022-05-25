@@ -26,10 +26,15 @@ set.cursorline = true
 set.hidden = true
 set.mouse = 'a'
 set.smartindent = true
-
+set.swapfile = false
 set.cursorline = false
 
-vim.cmd [[ silent! colorscheme edge ]]
 vim.g.vim_json_conceal=0
 vim.g.python3_host_prog="/opt/homebrew/bin/python3"
 
+vim.g.floaterm_keymap_new='<F7>'
+vim.g.floaterm_keymap_prev   = '<F8>'
+vim.g.floaterm_keymap_next   = '<F9>'
+vim.g.floaterm_keymap_toggle = '<F12>'
+
+vim.cmd [[ silent! colorscheme onedarker ]]
