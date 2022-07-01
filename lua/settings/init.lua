@@ -20,7 +20,6 @@ set.splitright = true
 set.wrap = false
 set.scrolloff = 5
 set.fileencoding = 'UTF-8'
--- set.clipboard=unnamed
 set.cursorline = true
 
 set.hidden = true

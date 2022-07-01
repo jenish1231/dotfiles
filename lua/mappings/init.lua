@@ -7,16 +7,16 @@ map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
 -- map H, J, K ,L to switch between panes
 map('n', '<C-H>', '<C-W><C-H>', opts)
--- map('n', '<C-J>', '<C-W><C-J>', opts)
--- map('n', '<C-K>', '<C-W><C-K>', opts)
+map('n', '<C-J>', '<C-W><C-J>', opts)
+map('n', '<C-K>', '<C-W><C-K>', opts)
 map('n', '<C-L>', '<C-W><C-L>', opts)
 
 -- map jj to Esc key
 map('i', 'jj', '<Esc>', opts)
 
 map('n', '<c-q>', ':noh<CR>', opts)
-map('n', '<c-j>', ':m+<CR>', opts)
-map('n', '<C-k>', ':m--<CR>', opts)
+map('n', '<S-j>', ':m+<CR>', opts)
+map('n', '<S-k>', ':m--<CR>', opts)
 
 -- copy to clipboard
 map('n', 'Y', '"+yg_', opts)
@@ -24,7 +24,9 @@ map('n', 'y', '"+y', opts)
 map('n', 'yy', '"+yy', opts)
 map('v', 'y', '"+y', opts)
 
-map('n', 'd', '"+d', opts)
+-- cut to clipboard
+map('n', 'dd', '"*dd', opts)
+map('n', 'D', '"*D', opts)
 
 -- paste from clipboard
 map('n', 'p', '"+p', opts)
