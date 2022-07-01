@@ -24,6 +24,8 @@ map('n', 'y', '"+y', opts)
 map('n', 'yy', '"+yy', opts)
 map('v', 'y', '"+y', opts)
 
+map('n', 'd', '"+d', opts)
+
 -- paste from clipboard
 map('n', 'p', '"+p', opts)
 map('n', 'P', '"+p', opts)
