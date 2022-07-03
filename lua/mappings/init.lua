@@ -26,7 +26,11 @@ map('v', 'y', '"+y', opts)
 
 -- cut to clipboard
 map('n', 'dd', '"*dd', opts)
-map('n', 'D', '"*D', opts)
+map('n', 'dd', '"*dd', opts)
+map('v', 'D', '"*D', opts)
+map('v', 'D', '"*D', opts)
+
+map('v', 'd', '"*D', opts)
 
 -- paste from clipboard
 map('n', 'p', '"+p', opts)
