@@ -3,8 +3,10 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kyazdani42/nvim-tree.lua'
 
+    -- color scheme
     use 'sainnhe/edge'
     use 'LunarVim/onedarker.nvim'
+    use 'tomasiser/vim-code-dark'
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -46,4 +48,6 @@ return require('packer').startup(function()
 
     use 'mg979/vim-visual-multi'
     use 'voldikss/vim-floaterm'
+
+    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
 end)

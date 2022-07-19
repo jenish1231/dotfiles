@@ -31,9 +31,10 @@ set.cursorline = false
 vim.g.vim_json_conceal=0
 vim.g.python3_host_prog="/opt/homebrew/bin/python3"
 
+vim.opt.termguicolors = true
 vim.g.floaterm_keymap_new='<F7>'
 vim.g.floaterm_keymap_prev   = '<F8>'
 vim.g.floaterm_keymap_next   = '<F9>'
 vim.g.floaterm_keymap_toggle = '<F12>'
 
-vim.cmd [[ silent! colorscheme onedarker ]]
+vim.cmd [[ silent! colorscheme codedark ]]

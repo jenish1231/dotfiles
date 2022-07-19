@@ -49,3 +49,9 @@ map('n', '<C-E>', ':NvimTreeToggle<CR>', opts)
 
 -- Ctrl SF
 map('n', '<C-F>', ':CtrlSF ', opts)
+
+-- Bufferline Configs
+map('n', '<S-l>', ':BufferLineCycleNext<CR>', opts)
+map('n', '<S-h>', ':BufferLineCyclePrev<CR>', opts)
+
+map('n', '<C-w>', '<leader>q :enew<bar> bd#<CR>', opts)
