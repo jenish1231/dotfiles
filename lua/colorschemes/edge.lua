@@ -1,1 +1,0 @@
-require('edge').setup{}

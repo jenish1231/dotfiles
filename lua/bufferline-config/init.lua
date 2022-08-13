@@ -18,7 +18,7 @@ bufferline.setup {
     buffer_close_icon = "",
     -- buffer_close_icon = '?',
     modified_icon = "",
-    close_icon = "",
+    -- close_icon = "",
     -- close_icon = '?',
     left_trunc_marker = "?",
     right_trunc_marker = "?",
@@ -27,7 +27,13 @@ bufferline.setup {
     tab_size = 21,
     diagnostics = "nvim_lsp", -- | "nvim_lsp" | "coc",
     diagnostics_update_in_insert = false,
-    offsets = { { filetype = "NvimTree", text = "", padding = 1 } },
+    offsets = {{ 
+        filetype = "NvimTree", 
+        highlight = "Directory",
+        text = "File Explorer", 
+        text_align="left",
+        padding = 1 
+    }},
     show_buffer_icons = true,
     show_buffer_close_icons = true,
     show_close_icon = true,
@@ -55,7 +61,6 @@ bufferline.setup {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
     },
-
     close_button = {
       guifg = { attribute = "fg", highlight = "TabLine" },
       guibg = { attribute = "bg", highlight = "TabLine" },
