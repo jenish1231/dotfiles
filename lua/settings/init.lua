@@ -21,6 +21,7 @@ set.wrap = false
 set.scrolloff = 5
 set.fileencoding = 'UTF-8'
 set.cursorline = true
+set.background = 'dark'
 
 set.hidden = true
 set.mouse = 'a'
@@ -37,5 +38,4 @@ vim.g.floaterm_keymap_prev   = '<F8>'
 vim.g.floaterm_keymap_next   = '<F9>'
 vim.g.floaterm_keymap_toggle = '<F12>'
 
-
-vim.cmd [[ silent! colorscheme onedarker ]]
+vim.cmd [[ silent! colorscheme doom-one ]]

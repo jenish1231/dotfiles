@@ -8,7 +8,9 @@ return require('packer').startup(function()
     -- color scheme
     use 'sainnhe/edge'
     use 'LunarVim/onedarker.nvim'
+    use 'NTBBloodbath/doom-one.nvim'
     use 'tomasiser/vim-code-dark'
+    use { 'Everblush/everblush.nvim', as = 'everblush' }
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -44,7 +46,6 @@ return require('packer').startup(function()
     use 'szw/vim-maximizer'
 
     use 'airblade/vim-gitgutter'
-    use 'github/copilot.vim'
     use 'jiangmiao/auto-pairs'
     use 'dyng/ctrlsf.vim'
 
