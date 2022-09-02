@@ -38,4 +38,9 @@ vim.g.floaterm_keymap_prev   = '<F8>'
 vim.g.floaterm_keymap_next   = '<F9>'
 vim.g.floaterm_keymap_toggle = '<F12>'
 
+-- vim.g.catppuccin_flavour = "mocha"
+
+-- vim.g.bettercomments_language_aliases = { "javascript": "js" }
+
 vim.cmd [[ silent! colorscheme doom-one ]]
+-- vim.cmd [[ silent! colorscheme catppuccin ]]

@@ -11,6 +11,7 @@ return require('packer').startup(function()
     use 'NTBBloodbath/doom-one.nvim'
     use 'tomasiser/vim-code-dark'
     use { 'Everblush/everblush.nvim', as = 'everblush' }
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -37,6 +38,11 @@ return require('packer').startup(function()
     }
 
     use 'tpope/vim-commentary'
+    use {
+      "folke/todo-comments.nvim",
+      requires = "nvim-lua/plenary.nvim",
+    }
+
     use 'psliwka/vim-smoothie' 
     use "williamboman/nvim-lsp-installer"
 
