@@ -9,6 +9,7 @@ set.softtabstop = 4
 set.signcolumn = 'yes'
 set.foldmethod = 'syntax'
 set.autoindent = true
+set.foldenable = false
 
 set.hlsearch = true
 set.incsearch = true
@@ -38,9 +39,11 @@ vim.g.floaterm_keymap_prev   = '<F8>'
 vim.g.floaterm_keymap_next   = '<F9>'
 vim.g.floaterm_keymap_toggle = '<F12>'
 
+vim.opt.list = true
+
 -- vim.g.catppuccin_flavour = "mocha"
 
 -- vim.g.bettercomments_language_aliases = { "javascript": "js" }
 
-vim.cmd [[ silent! colorscheme doom-one ]]
+vim.cmd [[ silent! colorscheme dracula ]]
 -- vim.cmd [[ silent! colorscheme catppuccin ]]

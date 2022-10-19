@@ -12,6 +12,7 @@ return require('packer').startup(function()
     use 'tomasiser/vim-code-dark'
     use { 'Everblush/everblush.nvim', as = 'everblush' }
     use { "catppuccin/nvim", as = "catppuccin" }
+    use 'Mofiqul/dracula.nvim'
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -19,12 +20,14 @@ return require('packer').startup(function()
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
     use 'L3MON4D3/LuaSnip' -- Snippets plugin
+    use 'rust-lang/rust.vim'
 
     use 'onsails/lspkind.nvim'
     use 'RyanMillerC/better-vim-tmux-resizer'
     use 'APZelos/blamer.nvim'
-
+    use "leafgarland/typescript-vim"
     use 'nvim-lualine/lualine.nvim'
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- tree sitter configs
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -48,7 +51,8 @@ return require('packer').startup(function()
 
     use 'jose-elias-alvarez/null-ls.nvim'
 
-    use 'Yggdroot/indentLine'
+    -- use 'Yggdroot/indentLine'
+    use "lukas-reineke/indent-blankline.nvim"
     use 'szw/vim-maximizer'
 
     use 'airblade/vim-gitgutter'
@@ -59,5 +63,6 @@ return require('packer').startup(function()
     use 'voldikss/vim-floaterm'
 
     use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
+    use "ray-x/web-tools.nvim"
 
 end)
