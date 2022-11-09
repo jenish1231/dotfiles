@@ -41,9 +41,5 @@ vim.g.floaterm_keymap_toggle = '<F12>'
 
 vim.opt.list = true
 
--- vim.g.catppuccin_flavour = "mocha"
-
--- vim.g.bettercomments_language_aliases = { "javascript": "js" }
-
 vim.cmd [[ silent! colorscheme dracula ]]
 -- vim.cmd [[ silent! colorscheme catppuccin ]]

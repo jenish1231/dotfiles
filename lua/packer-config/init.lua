@@ -9,9 +9,6 @@ return require('packer').startup(function()
     use 'sainnhe/edge'
     use 'LunarVim/onedarker.nvim'
     use 'NTBBloodbath/doom-one.nvim'
-    use 'tomasiser/vim-code-dark'
-    use { 'Everblush/everblush.nvim', as = 'everblush' }
-    use { "catppuccin/nvim", as = "catppuccin" }
     use 'Mofiqul/dracula.nvim'
 
     -- lspconfigs
@@ -27,7 +24,6 @@ return require('packer').startup(function()
     use 'APZelos/blamer.nvim'
     use "leafgarland/typescript-vim"
     use 'nvim-lualine/lualine.nvim'
-    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
 
     -- tree sitter configs
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
