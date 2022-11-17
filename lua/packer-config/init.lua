@@ -11,6 +11,8 @@ return require('packer').startup(function()
     use 'NTBBloodbath/doom-one.nvim'
     use 'Mofiqul/dracula.nvim'
 
+    use {'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim'}
+
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
