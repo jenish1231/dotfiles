@@ -64,3 +64,6 @@ map('n', '<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>', opts)
 map('n', '<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
  
 map("n", "gt", ":vert winc ]<CR>", opts)
+
+map('n', '<leader>d', ':DogoGenerate<CR>', opts)
+

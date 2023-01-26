@@ -11,14 +11,13 @@ return require('packer').startup(function()
     use 'NTBBloodbath/doom-one.nvim'
     use 'Mofiqul/dracula.nvim'
 
-    use {'axkirillov/easypick.nvim', requires = 'nvim-telescope/telescope.nvim'}
+    use 'hood/popui.nvim'
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'L3MON4D3/LuaSnip' -- Snippets plugin
     use 'rust-lang/rust.vim'
 
     use 'onsails/lspkind.nvim'
@@ -26,6 +25,7 @@ return require('packer').startup(function()
     use 'APZelos/blamer.nvim'
     use "leafgarland/typescript-vim"
     use 'nvim-lualine/lualine.nvim'
+    use({"L3MON4D3/LuaSnip", tag = "v<CurrentMajor>.*"})
 
     -- tree sitter configs
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -49,7 +49,6 @@ return require('packer').startup(function()
 
     use 'jose-elias-alvarez/null-ls.nvim'
 
-    -- use 'Yggdroot/indentLine'
     use "lukas-reineke/indent-blankline.nvim"
     use 'szw/vim-maximizer'
 
@@ -58,9 +57,14 @@ return require('packer').startup(function()
     use 'dyng/ctrlsf.vim'
 
     use 'mg979/vim-visual-multi'
-    use 'voldikss/vim-floaterm'
 
-    use {'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons'}
     use "ray-x/web-tools.nvim"
+
+
+    -- documentation generator
+    use {
+      'kkoomen/vim-doge',
+      run = ':call doge#install()'
+    }
 
 end)
