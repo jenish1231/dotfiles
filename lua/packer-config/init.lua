@@ -10,6 +10,8 @@ return require('packer').startup(function()
     use 'LunarVim/onedarker.nvim'
     use 'NTBBloodbath/doom-one.nvim'
     use 'Mofiqul/dracula.nvim'
+    use 'JoosepAlviste/palenightfall.nvim'
+    use 'luisiacc/gruvbox-baby'
 
     use 'hood/popui.nvim'
 
@@ -52,7 +54,7 @@ return require('packer').startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     use 'szw/vim-maximizer'
 
-    use 'airblade/vim-gitgutter'
+    -- use 'airblade/vim-gitgutter'
     use 'jiangmiao/auto-pairs'
     use 'dyng/ctrlsf.vim'
 
@@ -67,4 +69,7 @@ return require('packer').startup(function()
       run = ':call doge#install()'
     }
 
+    use 'echasnovski/mini.nvim'
+    use 'mbbill/undotree'
+    use 'lewis6991/gitsigns.nvim'
 end)
