@@ -47,28 +47,11 @@ map('n', '<leader>z', ":MaximizerToggle<cr>", opts)
 
 map('n', '<C-E>', ':NvimTreeToggle<CR>', opts)
 
--- Ctrl SF
-map('n', '<C-F>', ':CtrlSF ', opts)
-
 map('n', '<leader>u', ':UndotreeToggle<CR>', opts)
 
--- Bufferline Configs
-map('n', '<S-l>', ':BufferLineCycleNext<CR>', opts)
-map('n', '<S-h>', ':BufferLineCyclePrev<CR>', opts)
-map('n', '<leader>1', '<Cmd>BufferLineGoToBuffer 1<CR>', opts)
-map('n', '<leader>2', '<Cmd>BufferLineGoToBuffer 2<CR>', opts)
-map('n', '<leader>3', '<Cmd>BufferLineGoToBuffer 3<CR>', opts)
-map('n', '<leader>4', '<Cmd>BufferLineGoToBuffer 4<CR>', opts)
-map('n', '<leader>5', '<Cmd>BufferLineGoToBuffer 5<CR>', opts)
-map('n', '<leader>6', '<Cmd>BufferLineGoToBuffer 6<CR>', opts)
-map('n', '<leader>7', '<Cmd>BufferLineGoToBuffer 7<CR>', opts)
-map('n', '<leader>8', '<Cmd>BufferLineGoToBuffer 8<CR>', opts)
-map('n', '<leader>9', '<Cmd>BufferLineGoToBuffer 9<CR>', opts)
- 
 map("n", "gt", ":vert winc ]<CR>", opts)
 
 map('n', '<leader>d', ':DogoGenerate<CR>', opts)
-
 
 -- Navigation
 map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", {expr=true})
@@ -92,3 +75,14 @@ map('n', '<leader>td', '<cmd>Gitsigns toggle_deleted<CR>', opts)
 -- Text object
 map('o', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
 map('x', 'ih', ':<C-U>Gitsigns select_hunk<CR>', opts)
+
+-- spectre
+map('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', opts)
+map('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', opts)
+map('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search()<CR>', opts)
+
+-- map('n', '<C-h>', '<cmd>TmuxNavigateLeft<CR>', opts)
+-- map('n', '<C-j>', '<cmd>TmuxNavigateDown<CR>', opts)
+-- map('n', '<C-k>', '<cmd>TmuxNavigateUp<CR>', opts)
+-- map('n', '<C-l>', '<cmd>TmuxNavigateRight<CR>', opts)
+

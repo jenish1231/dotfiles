@@ -1,17 +1,24 @@
 return require('packer').startup(function() 
 	use 'wbthomason/packer.nvim'
+
 	use 'kyazdani42/nvim-web-devicons'
 	use 'kyazdani42/nvim-tree.lua'
 
     use 'tpope/vim-surround'
+    use {
+      "folke/which-key.nvim",
+      config = function()
+        vim.o.timeout = true
+        vim.o.timeoutlen = 300
+        require("which-key").setup {
+        }
+      end
+    }
 
     -- color scheme
-    use 'sainnhe/edge'
-    use 'LunarVim/onedarker.nvim'
     use 'NTBBloodbath/doom-one.nvim'
-    use 'Mofiqul/dracula.nvim'
     use 'JoosepAlviste/palenightfall.nvim'
-    use 'luisiacc/gruvbox-baby'
+    use 'folke/tokyonight.nvim'
 
     use 'hood/popui.nvim'
 
@@ -20,7 +27,11 @@ return require('packer').startup(function()
     use 'hrsh7th/nvim-cmp' -- Autocompletion plugin
     use 'hrsh7th/cmp-nvim-lsp' -- LSP source for nvim-cmp
     use 'saadparwaiz1/cmp_luasnip' -- Snippets source for nvim-cmp
-    use 'rust-lang/rust.vim'
+    -- use 'rust-lang/rust.vim'
+    use 'SmiteshP/nvim-navic'
+    use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
+
+    use "metakirby5/codi.vim"
 
     use 'onsails/lspkind.nvim'
     use 'RyanMillerC/better-vim-tmux-resizer'
@@ -56,7 +67,7 @@ return require('packer').startup(function()
 
     -- use 'airblade/vim-gitgutter'
     use 'jiangmiao/auto-pairs'
-    use 'dyng/ctrlsf.vim'
+    use 'nvim-pack/nvim-spectre'
 
     use 'mg979/vim-visual-multi'
 
@@ -72,4 +83,5 @@ return require('packer').startup(function()
     use 'echasnovski/mini.nvim'
     use 'mbbill/undotree'
     use 'lewis6991/gitsigns.nvim'
+    use 'christoomey/vim-tmux-navigator'
 end)

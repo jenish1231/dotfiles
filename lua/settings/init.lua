@@ -42,8 +42,6 @@ vim.g.floaterm_keymap_toggle = '<F12>'
 
 vim.opt.list = true
 
-
-
 -- indent Line Configs
 vim.cmd [[highlight IndentBlanklineIndent1 guifg=#E06C75 gui=nocombine]]
 vim.cmd [[highlight IndentBlanklineIndent2 guifg=#E5C07B gui=nocombine]]
@@ -79,5 +77,5 @@ vim.g.gruvbox_baby_telescope_theme = 1
 vim.g.gruvbox_baby_transparent_mode = 1
 
 -- Load the colorscheme
-vim.cmd[[colorscheme palenightfall]]
+vim.cmd[[colorscheme tokyonight ]]
 -- vim.cmd [[ silent! colorscheme palenightfall ]]

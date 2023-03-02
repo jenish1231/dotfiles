@@ -1,7 +1,6 @@
 local lsp_installer = require('nvim-lsp-installer')
 
 -- Mappings.
--- See `:help vim.diagnostic.*` for documentation on any of the below functions
 local opts = { noremap=true, silent=true }
 vim.api.nvim_set_keymap('n', '<space>e', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
 vim.api.nvim_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
@@ -15,6 +14,10 @@ local on_attach = function(client, bufnr)
   client.server_capabilities.document_formatting = false
   client.server_capabilities.document_range_formatting = false
 
+ if client.server_capabilities.documentSymbolProvider then
+    require("nvim-navic").attach(client, bufnr)
+  end
+
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'ga', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
@@ -23,6 +26,7 @@ local on_attach = function(client, bufnr)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>f', '<cmd>lua vim.lsp.buf.format{ async =true }<CR>', opts)
+
 end
 
 -- Add additional capabilities supported by nvim-cmp
@@ -42,6 +46,11 @@ for _, lsp in pairs(servers) do
     }
   }
 end
+
+
+require("lspconfig").clangd.setup {
+    on_attach = on_attach
+}
 
 require'lspconfig'.tsserver.setup{
 
@@ -79,3 +88,11 @@ require'lspconfig'.tsserver.setup{
     end
   };
 }
+
+-- local navic = require("nvim-navic")
+
+-- require("lspconfig").clangd.setup {
+--     on_attach = function(client, bufnr)
+--         navic.attach(client, bufnr)
+--     end
+-- }
