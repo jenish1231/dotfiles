@@ -1,7 +1,7 @@
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
-vim.g.mapleader = ','
+vim.g.mapleader = ' '
 
 map('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 
@@ -10,6 +10,12 @@ map('n', '<C-H>', '<C-W><C-H>', opts)
 map('n', '<C-J>', '<C-W><C-J>', opts)
 map('n', '<C-K>', '<C-W><C-K>', opts)
 map('n', '<C-L>', '<C-W><C-L>', opts)
+
+-- Resize buffer mapping
+map('n', '<A-S-K>', ':resize -10<CR>', opts)
+map('n', '<A-S-J>', ':resize +10<CR>',opts )
+map('n', '<A-S-l>', ':vertical resize -10<CR>', opts)
+map('n', '<A-S-H>', ':vertical resize +10<CR>', opts)
 
 -- map jj to Esc key
 map('i', 'jj', '<Esc>', opts)
@@ -81,8 +87,16 @@ map('n', '<leader>S', '<cmd>lua require("spectre").open()<CR>', opts)
 map('n', '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', opts)
 map('n', '<leader>sp', '<cmd>lua require("spectre").open_file_search()<CR>', opts)
 
--- map('n', '<C-h>', '<cmd>TmuxNavigateLeft<CR>', opts)
--- map('n', '<C-j>', '<cmd>TmuxNavigateDown<CR>', opts)
--- map('n', '<C-k>', '<cmd>TmuxNavigateUp<CR>', opts)
--- map('n', '<C-l>', '<cmd>TmuxNavigateRight<CR>', opts)
+-- Remaps for the refactoring operations currently offered by the plugin
+vim.api.nvim_set_keymap("v", "<leader>re", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>rf", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function To File')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>rv", [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Variable')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("v", "<leader>ri", [[ <Esc><Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
+
+-- Extract block doesn't need visual mode
+vim.api.nvim_set_keymap("n", "<leader>rb", [[ <Cmd>lua require('refactoring').refactor('Extract Block')<CR>]], {noremap = true, silent = true, expr = false})
+vim.api.nvim_set_keymap("n", "<leader>rbf", [[ <Cmd>lua require('refactoring').refactor('Extract Block To File')<CR>]], {noremap = true, silent = true, expr = false})
+
+-- Inline variable can also pick up the identifier currently under the cursor without visual mode
+vim.api.nvim_set_keymap("n", "<leader>ri", [[ <Cmd>lua require('refactoring').refactor('Inline Variable')<CR>]], {noremap = true, silent = true, expr = false})
 

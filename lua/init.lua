@@ -9,6 +9,6 @@ require('lualine-config')
 require('tree-sitter-config')
 require('todo-config')
 require('indentline-config')
-require('webtools-config')
 require('gitsigns-config')
+
 require('mini.move').setup()

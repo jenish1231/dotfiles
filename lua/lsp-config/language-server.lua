@@ -59,7 +59,9 @@ require'lspconfig'.tsserver.setup{
     flags = {
       debounce_text_changes = 150,
     },
-  handlers = {
+    filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+    cmd = { "typescript-language-server", "--stdio" },
+    handlers = {
     ["textDocument/definition"] = function(_, result, params)
       if result == nil or vim.tbl_isempty(result) then
         -- local _ = vim.lsp.log.info() and vim.lsp.log.info(params.method, 'No location found')
@@ -89,10 +91,3 @@ require'lspconfig'.tsserver.setup{
   };
 }
 
--- local navic = require("nvim-navic")
-
--- require("lspconfig").clangd.setup {
---     on_attach = function(client, bufnr)
---         navic.attach(client, bufnr)
---     end
--- }

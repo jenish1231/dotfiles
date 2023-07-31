@@ -5,22 +5,23 @@ return require('packer').startup(function()
 	use 'kyazdani42/nvim-tree.lua'
 
     use 'tpope/vim-surround'
-    use {
-      "folke/which-key.nvim",
-      config = function()
-        vim.o.timeout = true
-        vim.o.timeoutlen = 300
-        require("which-key").setup {
-        }
-      end
-    }
 
-    -- color scheme
-    use 'NTBBloodbath/doom-one.nvim'
-    use 'JoosepAlviste/palenightfall.nvim'
-    use 'folke/tokyonight.nvim'
-
-    use 'hood/popui.nvim'
+-- color scheme
+     use({
+        "themercorp/themer.lua",
+        config = function()
+	      require("themer").setup({
+	          colorscheme = "rose_pine",
+	          styles = {
+	            	["function"] = { style = 'italic' },
+	            functionbuiltin = { style = 'italic' },
+	            variable = { style = 'italic' },
+	            variableBuiltIn = { style = 'italic' },
+	            	parameter  = { style = 'italic' },
+	          },
+	      })
+        end
+    })
 
     -- lspconfigs
     use 'neovim/nvim-lspconfig'
@@ -30,8 +31,6 @@ return require('packer').startup(function()
     -- use 'rust-lang/rust.vim'
     use 'SmiteshP/nvim-navic'
     use { 'sindrets/diffview.nvim', requires = 'nvim-lua/plenary.nvim' }
-
-    use "metakirby5/codi.vim"
 
     use 'onsails/lspkind.nvim'
     use 'RyanMillerC/better-vim-tmux-resizer'
@@ -71,9 +70,6 @@ return require('packer').startup(function()
 
     use 'mg979/vim-visual-multi'
 
-    use "ray-x/web-tools.nvim"
-
-
     -- documentation generator
     use {
       'kkoomen/vim-doge',
@@ -84,4 +80,14 @@ return require('packer').startup(function()
     use 'mbbill/undotree'
     use 'lewis6991/gitsigns.nvim'
     use 'christoomey/vim-tmux-navigator'
+    use {
+        "ThePrimeagen/refactoring.nvim",
+        requires = {
+            {"nvim-lua/plenary.nvim"},
+            {"nvim-treesitter/nvim-treesitter"}
+        },
+        config = function() 
+            require('refactoring').setup()
+        end
+    }
 end)
