@@ -5,3 +5,14 @@ lvim.builtin.telescope.defaults.find_files = ({
 })
 
 lvim.builtin.telescope.theme = "center"
+
+lvim.builtin.telescope.on_config_done = function(telescope)
+  telescope.setup {
+    extensions = {
+      ["ui-select"] = {
+        require("telescope.themes").get_dropdown {}
+      }
+    }
+  }
+  telescope.load_extension("ui-select")
+end

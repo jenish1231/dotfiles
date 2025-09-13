@@ -7,7 +7,8 @@ lvim.keys.normal_mode["<leader>dfc"] = ":DiffviewClose<CR>"
 
 lvim.keys.normal_mode["<leader>j"] = ":BufferLineCyclePrev <CR>"
 lvim.keys.normal_mode["<leader>k"] = ":BufferLineCycleNext <CR>"
-lvim.keys.normal_mode["<C-S-w>"] = ":BufferKill <CR>"
+lvim.keys.normal_mode["<leader>q"] = ":BufferKill <CR>"
+
 
 lvim.keys.normal_mode["<leader>S"] = '<cmd>lua require("spectre").open()<CR>'
 lvim.keys.normal_mode["<leader>sw"] = '<cmd>lua require("spectre").open_visual({select_word=true})<CR>'
@@ -34,15 +35,15 @@ lvim.format_on_save.enabled = true
 lvim.format_on_save.pattern = { "*.py" }
 
 lvim.keys.normal_mode["<C-e>"] = nil
-lvim.keys.normal_mode["<leader>f"] = "<cmd>lua vim.lsp.buf.format{ async = true }<CR>"
+lvim.keys.normal_mode["<leader>f"] = "<cmd>lua vim.lsp.buf.format{ async = false }<CR>"
 lvim.keys.normal_mode["<leader>o"] = "<cmd>lua vim.lsp.buf.code_action({ source= {organizeImports = true }})<CR>"
-lvim.keys.normal_mode["<leader>ca"] = "<cmd>lua vim.lsp.buf.code_action()<CR>"
 lvim.keys.normal_mode["<leader>z"] = "<cmd>lua require('maximizer').toggle()<CR>"
 lvim.keys.normal_mode["<leader>d"] = ":DogoGenerate<CR>"
 lvim.keys.normal_mode["gt"] = ":vsplit | lua vim.lsp.buf.definition()<CR>"
 lvim.keys.normal_mode["<space>rn"] = "<cmd>lua vim.lsp.buf.rename()<CR>"
+lvim.keys.normal_mode["<C-i>"] = ":CopilotChatToggle<CR>"
+
 
 vim.keymap.set("n", "<leader>rbf", ":Refactor extract_block_to_file<CR>")
 
--- lvim.keys.normal_mode['<C-t>'] = ":ToggleTerm<CR>"
 vim.wo.relativenumber = true

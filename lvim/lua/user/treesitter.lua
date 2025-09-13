@@ -1,7 +1,13 @@
-lvim.builtin.treesitter.ensure_installed = {
-  "python",
-  "json"
+require('nvim-treesitter.configs').setup {
+  highlight = {
+    enable = true,
+  },
 }
+-- require('nvim-ts-autotag').setup()
+-- lvim.builtin.treesitter.ensure_installed = {
+--   "python",
+--   "json"
+-- }
 
 
 lvim.builtin.gitsigns.opts.signs = {
@@ -14,4 +20,3 @@ lvim.builtin.gitsigns.opts.signs = {
 }
 
 
-require('nvim-ts-autotag').setup()

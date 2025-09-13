@@ -15,9 +15,16 @@ lvim.plugins = {
   { "ThePrimeagen/refactoring.nvim", },
   { 'simrat39/rust-tools.nvim' },
   { 'mg979/vim-visual-multi' },
-  { "windwp/nvim-ts-autotag" },
   { "github/copilot.vim" },
   { "tpope/vim-fugitive" },
   { "junegunn/gv.vim" },
-  { "scottmckendry/cyberdream.nvim" }
+  { "HiPhish/rainbow-delimiters.nvim" },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      { "nvim-lua/plenary.nvim", branch = "master" },
+    },
+    build = "make tiktoken"
+  },
+  { 'nvim-telescope/telescope-ui-select.nvim' }
 }

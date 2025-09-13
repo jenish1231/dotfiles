@@ -20,8 +20,6 @@ end
 
 local nvimtree = lvim.builtin.nvimtree
 
--- vim.g.nvim_tree_
-
 
 nvimtree.setup.on_attach = my_on_attach
 nvimtree.setup.disable_netrw = true
