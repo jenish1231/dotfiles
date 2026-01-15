@@ -7,6 +7,14 @@ Personal dotfiles managed with GNU Stow for easy configuration management.
 - **nvim(Astrovim)**: Neovim configuration
 - **tmux**: Tmux configuration
 
+## Tools Included
+
+- **Neovim**: Modern Vim-based text editor
+- **AstroVim**: Feature-rich Neovim configuration
+- **Tmux**: Terminal multiplexer
+- **zoxide**: Smarter cd command that learns your habits
+- **Starship**: Fast, customizable cross-shell prompt
+
 ## Prerequisites
 
 - macOS (or Linux with package manager adjustments)
@@ -14,6 +22,22 @@ Personal dotfiles managed with GNU Stow for easy configuration management.
 - Git
 
 ## Installation
+
+### Quick Install (Automated)
+
+```bash
+git clone git@github.com:jenish1231/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+./install.sh
+```
+
+The script will:
+- Install Neovim, Tmux, GNU Stow, zoxide, and Starship via Homebrew
+- Backup existing configurations
+- Install AstroVim
+- Link all dotfiles using Stow
+
+### Manual Installation
 
 ### 1. Install Required Tools
 
@@ -27,6 +51,18 @@ brew install neovim
 
 ```bash
 brew install tmux
+```
+
+#### Install zoxide
+
+```bash
+brew install zoxide
+```
+
+#### Install Starship
+
+```bash
+brew install starship
 ```
 
 #### Install AstroVim
@@ -79,6 +115,38 @@ nvim
 
 # Start Tmux
 tmux
+```
+
+### 6. Configure zoxide
+
+Add to your shell configuration file:
+
+```bash
+# For Bash (~/.bashrc)
+eval "$(zoxide init bash)"
+
+# For Zsh (~/.zshrc)
+eval "$(zoxide init zsh)"
+
+# For Fish (~/.config/fish/config.fish)
+zoxide init fish | source
+```
+
+Then use `z <directory>` instead of `cd` to jump to frequently used directories.
+
+### 7. Configure Starship
+
+Add to your shell configuration file:
+
+```bash
+# For Bash (~/.bashrc)
+eval "$(starship init bash)"
+
+# For Zsh (~/.zshrc)
+eval "$(starship init zsh)"
+
+# For Fish (~/.config/fish/config.fish)
+starship init fish | source
 ```
 
 > **Note**: On first launch, Neovim/AstroVim will automatically install plugins. This may take a few minutes.
