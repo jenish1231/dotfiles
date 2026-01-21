@@ -1,10 +1,7 @@
 return {
-
   { "psliwka/vim-smoothie" },
-
   { "RyanMillerC/better-vim-tmux-resizer" },
   { "nvim-pack/nvim-spectre" },
-  "andweeb/presence.nvim",
   { "0x00-ketsu/maximizer.nvim" },
   {
     "ray-x/lsp_signature.nvim",
@@ -21,7 +18,6 @@ return {
         opts = {
           enable_close = true,
           enable_rename = true,
-          enable_close_on_slash = true,
         },
       }
     end,
@@ -164,10 +160,6 @@ return {
         desc = "Sidekick Select Prompt",
       },
     },
-  },
-  {
-    "VPavliashvili/json-nvim",
-    ft = "json", -- only load for json filetype
   },
   {
     "OXY2DEV/markview.nvim",
