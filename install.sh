@@ -26,20 +26,60 @@ print_info() {
     echo -e "${YELLOW}➜${NC} $1"
 }
 
-# Check if Homebrew is installed
-if ! command -v brew &> /dev/null; then
-    print_error "Homebrew is not installed. Please install it first:"
-    echo "  /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
-    exit 1
+# Detect OS
+OS="$(uname -s)"
+case "$OS" in
+    Linux*)
+        if [ -f /etc/os-release ]; then
+            . /etc/os-release
+            if [ "$ID" = "ubuntu" ] || [ "$ID_LIKE" = "debian" ]; then
+                OS_TYPE="ubuntu"
+                print_info "Detected Ubuntu/Debian-based system"
+            else
+                print_error "Unsupported Linux distribution. This script supports Ubuntu/Debian."
+                exit 1
+            fi
+        else
+            print_error "Cannot detect Linux distribution"
+            exit 1
+        fi
+        ;;
+    Darwin*)
+        OS_TYPE="mac"
+        print_info "Detected macOS"
+        ;;
+    *)
+        print_error "Unsupported OS: $OS"
+        exit 1
+        ;;
+esac
+
+# Install package manager and packages based on OS
+if [ "$OS_TYPE" = "mac" ]; then
+    # Check if Homebrew is installed
+    if ! command -v brew &> /dev/null; then
+        print_error "Homebrew is not installed. Please install it first:"
+        echo "  /bin/bash -c \"\$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)\""
+        exit 1
+    fi
+    print_success "Homebrew is installed"
+elif [ "$OS_TYPE" = "ubuntu" ]; then
+    # Update apt cache
+    print_info "Updating package cache..."
+    sudo apt-get update -qq
+    print_success "Package cache updated"
 fi
-print_success "Homebrew is installed"
 
 # Install Neovim
 print_info "Installing Neovim..."
 if command -v nvim &> /dev/null; then
     print_success "Neovim is already installed"
 else
-    brew install neovim
+    if [ "$OS_TYPE" = "mac" ]; then
+        brew install neovim
+    else
+        sudo apt-get install -y neovim
+    fi
     print_success "Neovim installed"
 fi
 
@@ -48,7 +88,11 @@ print_info "Installing Tmux..."
 if command -v tmux &> /dev/null; then
     print_success "Tmux is already installed"
 else
-    brew install tmux
+    if [ "$OS_TYPE" = "mac" ]; then
+        brew install tmux
+    else
+        sudo apt-get install -y tmux
+    fi
     print_success "Tmux installed"
 fi
 
@@ -57,7 +101,11 @@ print_info "Installing GNU Stow..."
 if command -v stow &> /dev/null; then
     print_success "GNU Stow is already installed"
 else
-    brew install stow
+    if [ "$OS_TYPE" = "mac" ]; then
+        brew install stow
+    else
+        sudo apt-get install -y stow
+    fi
     print_success "GNU Stow installed"
 fi
 
@@ -66,7 +114,12 @@ print_info "Installing zoxide..."
 if command -v zoxide &> /dev/null; then
     print_success "zoxide is already installed"
 else
-    brew install zoxide
+    if [ "$OS_TYPE" = "mac" ]; then
+        brew install zoxide
+    else
+        # Install from GitHub release for Ubuntu
+        curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
+    fi
     print_success "zoxide installed"
 fi
 
@@ -75,7 +128,12 @@ print_info "Installing Starship..."
 if command -v starship &> /dev/null; then
     print_success "Starship is already installed"
 else
-    brew install starship
+    if [ "$OS_TYPE" = "mac" ]; then
+        brew install starship
+    else
+        # Install from official script for Ubuntu
+        curl -sS https://starship.rs/install.sh | sh -s -- -y
+    fi
     print_success "Starship installed"
 fi
 

@@ -3,6 +3,7 @@ return {
   { "RyanMillerC/better-vim-tmux-resizer" },
   { "nvim-pack/nvim-spectre" },
   { "0x00-ketsu/maximizer.nvim" },
+  { "xiyaowong/transparent.nvim" },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
