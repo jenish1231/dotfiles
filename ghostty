@@ -1,0 +1,8 @@
+macos-option-as-alt = true
+mouse-shift-capture=true
+theme=Ayu Mirage
+font-family = Menlo
+font-size=12
+adjust-cell-height=10
+adjust-font-baseline=-1
+mouse-shift-capture=false

@@ -3,7 +3,7 @@ return {
   { "RyanMillerC/better-vim-tmux-resizer" },
   { "nvim-pack/nvim-spectre" },
   { "0x00-ketsu/maximizer.nvim" },
-  { "xiyaowong/transparent.nvim" },
+  { "Shatur/neovim-ayu" },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -101,7 +101,13 @@ return {
   },
   {
     "folke/sidekick.nvim",
-    opts = {},
+    opts = {
+      cli = {
+        tools = {
+          copilot = { cmd = { "copilot", "--banner", "--no-auto-update" } },
+        },
+      },
+    },
     keys = {
       {
         "<tab>",
