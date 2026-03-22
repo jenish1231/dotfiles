@@ -3,7 +3,6 @@ return {
   { "RyanMillerC/better-vim-tmux-resizer" },
   { "nvim-pack/nvim-spectre" },
   { "0x00-ketsu/maximizer.nvim" },
-  { "Shatur/neovim-ayu" },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -43,7 +42,6 @@ return {
 
   { "sindrets/diffview.nvim" },
   { "max397574/better-escape.nvim", enabled = false },
-
   {
     "L3MON4D3/LuaSnip",
     config = function(plugin, opts)
@@ -52,7 +50,6 @@ return {
       luasnip.filetype_extend("javascript", { "javascriptreact" })
     end,
   },
-
   {
     "windwp/nvim-autopairs",
     config = function(plugin, opts)
@@ -188,5 +185,16 @@ return {
     keys = {
       { "<leader>gg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
     },
+  },
+  {
+    "sainnhe/edge",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      -- Optionally configure and load the colorscheme
+      -- directly inside the plugin declaration.
+      -- vim.g.edge_enable_italic = true
+      vim.cmd.colorscheme "edge"
+    end,
   },
 }
